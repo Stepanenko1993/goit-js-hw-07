@@ -1,11 +1,43 @@
 import { galleryItems } from './gallery-items.js';
-// Change code below this line
-const instance = basicLightbox.create(`
-    <h1>Not closable</h1>
-    <p>It's not possible to close this lightbox with a click.</p>
-`, {
-    closable: false
-})
 
+const list = document.querySelector('.gallery');
+
+(function () {
+    const gallery = galleryItems.map(({ preview, original, description }) => `
+ <li class ="gallery__item">
+  <a 
+  class = "gallery__link"
+  href="${original}">
+  <img 
+  class ="gallery__image"
+  src="${preview}" 
+  data-source="${original}
+  alt="${description}"
+  />
+  </a>
+</li>`).join('');
+    list.insertAdjacentHTML('beforeend', gallery)
+})()
+
+list.addEventListener('click', onclick);
+
+function onclick(evt) {
+
+
+    const instance = basicLightbox.create(`
+    
+  
+
+`)
 instance.show()
-console.log(galleryItems);
+
+    }
+
+
+   
+    
+
+ 
+
+
+
