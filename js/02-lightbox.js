@@ -5,7 +5,7 @@ const containerGallery = document.querySelector('.gallery');
 
 
 
-const markup = galleryItems.reduce(
+const markupGallery = galleryItems.reduce(
     (acc, { original, preview, description }) =>
       (acc += `<li>
     <a class="gallery__item" href="${original}">
@@ -19,7 +19,7 @@ const markup = galleryItems.reduce(
     ''
   );
   
-  containerGallery.insertAdjacentHTML('beforeend', markup);
+  containerGallery.insertAdjacentHTML('beforeend', markupGallery);
   
   const lightbox = new SimpleLightbox('.gallery a', {
     captionsData: 'alt',
